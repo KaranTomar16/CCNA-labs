@@ -1,0 +1,20 @@
+# Day 1 - Basic Switching Lab
+
+## Objective
+Set up a simple switching network with two PCs and one switch.
+
+## Topology
+- Switch: 1
+- PCs: 2
+
+## Steps
+1. Open Cisco Packet Tracer.
+2. Add one switch and two PCs.
+3. Connect PCs to switch using copper straight-through cables.
+4. Assign IP addresses:
+   - PC1: 192.168.1.1 /24
+   - PC2: 192.168.1.2 /24
+5. Test connectivity with `ping`.
+
+## Result
+Both PCs should successfully ping each other.
