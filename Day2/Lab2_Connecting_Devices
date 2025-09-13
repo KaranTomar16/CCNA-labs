@@ -1,0 +1,21 @@
+# Day 2 – Intermediate Networking Lab
+
+# Objective
+Practice connecting multiple LANs with routers, switches, firewalls, PCs, and servers using correct cabling (considering Auto MDI-X disabled).
+
+# Topology
+Routers: 4
+Switches: 8
+PCs: 3
+Servers: 1
+
+# Steps
+Added routers, switches, PCs, firewalls, and servers in Packet Tracer.
+Connected devices using appropriate cables (straight-through, crossover, fiber where required).
+NOTE: Packet Tracer doesn't differentiate between single-mode and multimode fiber, but think about which one is appropriate when you use a fiber connection.
+For switches connected to each other, used crossover cable.
+Tested connectivity with ping between devices across different LANs.
+
+# Result
+
+All devices in LAN1 and LAN2 communicated successfully through the routers.
