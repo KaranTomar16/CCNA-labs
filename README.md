@@ -20,9 +20,9 @@ It includes Packet Tracer configurations, and step-by-step notes.
 
 
 ## 📅 Progress Log
-- **Day 1:**
-- **Day 2:**
-- **Day 3:**
+- **Day 1: Introduction to packet Tracer
+- **Day 2: Connecting Devices
+- **Day 3: OSI Model 
 - *(updated daily)*  
 
 ## 📧 Contact
