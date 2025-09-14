@@ -1,0 +1,33 @@
+# Day 2 – Intermediate Networking Lab
+
+# Objective
+Use simulation mode to analyze network traffic and observe which OSI layers are involved, and generate Layer 7 traffic by releasing and renewing an IP address.
+
+# Topology
+Routers: 2
+Switches: 2
+PCs: 1
+Servers: 1
+
+# Steps
+
+Opened Simulation Mode in Packet Tracer to capture and analyze packets.
+Observed traffic between devices and identified OSI layers in use:
+Layer 1 (Physical): Transmission of bits across cables.
+Layer 2 (Data Link): Ethernet frames for switch communication.
+Layer 3 (Network): IP packets handled by routers.
+Layer 4 (Transport): TCP/UDP segments during communication.
+Layer 7 (Application): Ping (ICMP messages) and DHCP request/response.
+
+Released and renewed PC1’s IP address using the ipconfig /release and ipconfig /renew commands.
+Captured DHCP traffic in simulation mode:
+DHCP Discover (Layer 7 → Application)
+DHCP Offer (Server → Client)
+DHCP Request (Client → Server)
+DHCP Acknowledgment (Server → Client)
+Verified that PC1 successfully obtained a new IP address and could again communicate with other devices.
+
+# Result
+
+Simulation mode showed traffic across multiple OSI layers (Physical → Application).
+Releasing and renewing PC1’s IP generated visible Layer 7 DHCP traffic, confirming proper address allocation and network connectivity.
