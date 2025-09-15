@@ -1,0 +1,63 @@
+# Day 3 – Basic Device Security 
+
+# Objective
+Configure router and switch hostnames, set and secure passwords, test encryption, and save the configuration.
+
+# Topology
+Routers: 1 (R1)
+Switches: 1 (SW1)
+pc: 3
+
+# Steps
+1. Change hostnames
+
+Entered global configuration mode.
+Used the command:
+R1(config)# hostname R1
+SW1(config)# hostname SW1
+Hostnames successfully changed to R1 and SW1.
+
+2. Configure an unencrypted enable password
+Command:
+R1(config)# enable password CCNA
+SW1(config)# enable password CCNA
+Exit back to user EXEC mode and test the password
+Exited to user EXEC mode, used enable → prompted for password → entered CCNA → access granted.
+
+3. View the password in the running configuration
+Command:
+R1# show running-config
+
+Output showed:
+enable password CCNA
+Password was visible in plain text.
+
+4. Encrypt all passwords
+Command:
+R1(config)# service password-encryption
+This encrypted the existing and future passwords.
+View the password in the running configuration
+Now CCNA appeared as a scrambled text (Type 7 encryption).
+
+5. Configure a more secure, encrypted enable password
+Command:
+R1(config)# enable secret Cisco
+SW1(config)# enable secret Cisco
+Exit back to user EXEC mode and return to privileged EXEC mode
+On entering enable, the device asked for a password.
+Only Cisco (enable secret) worked, not CCNA.
+View the passwords in the running configuration
+enable password CCNA → encrypted with Type 7.
+enable secret Cisco → encrypted with Type 5 (MD5 hash).
+
+6. Save configuration
+Command:
+R1# copy running-config startup-config
+Configuration saved successfully.
+
+# Result
+Hostnames updated for router and switch.
+Plain-text password CCNA was encrypted using service password-encryption (Type 7).
+Stronger password Cisco set with enable secret (Type 5).
+Verified that only the enable secret is used to enter privileged EXEC mode.
+Configurations saved to startup-config.
