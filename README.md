@@ -24,6 +24,7 @@ It includes Packet Tracer configurations, and step-by-step notes.
 - **Day 2: Connecting Devices
 - **Day 3: OSI Model 
 - **Day 4: Basic Device Security
+- **Day 5: Ethernet Lan Swtiching Part-1
 - *(updated daily)*  
 
 ## 📧 Contact
