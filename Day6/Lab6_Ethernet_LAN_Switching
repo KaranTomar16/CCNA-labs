@@ -1,0 +1,39 @@
+# Day 6 – Ethernet LAN Switching Part-II
+
+# Objective
+Analyze ARP and MAC learning on switches, observe how MAC address tables are populated, and practice clearing dynamic entries.
+
+# Topology
+Switches: 2
+PCs: 4
+
+# Steps
+Initial State
+Both switches had empty MAC address tables.
+All PCs had empty ARP tables.
+Ping from PC1 → PC3
+PC1 broadcasted an ARP request to learn PC3’s MAC.
+Switch flooded the frame to all ports.
+PC3 replied with its MAC address.
+Switch learned the MAC addresses of PC1 and PC3.
+Ping from PC2 → PC4
+Similar process: ARP request broadcasted, switch flooded it.
+PC4 replied with its MAC.
+Switch learned the MAC addresses of PC2 and PC4.
+Verify Switch MAC Tables
+
+Used:
+Switch> show mac-address-table
+Switch 1 showed learned MACs of connected PCs.
+Switch 2 showed MACs of its connected PCs.
+Clear Switch MAC Tables
+
+Used:
+Switch# clear mac-address-table dynamic
+Checked again with show mac-address-table → tables were empty.
+
+# Result
+ARP resolved IP-to-MAC mappings successfully.
+Switches dynamically learned MAC addresses during ping exchanges.
+Verified MAC entries using show command.
+Cleared the dynamic MAC tables on both switches successfully.
