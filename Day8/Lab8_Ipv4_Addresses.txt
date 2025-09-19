@@ -1,0 +1,66 @@
+# Day 8 – Ipv4 Addressing Part-II
+
+# Objective
+Configure router interfaces and PC IPs, verify connectivity between multiple networks using switches and a router.
+
+# Topology 
+Router: 1 (R1)
+Switches: 3 (SW1, SW2, SW3)
+PCs: 3 (PC1, PC2, PC3)
+
+# Steps
+Configure Router Hostname
+Router> enable
+Router# configure terminal
+Router(config)# hostname R1
+
+Check Interfaces
+R1# show ip interface brief
+Verified available interfaces and their status.
+
+Assign IP Addresses and Enable Interfaces
+
+Gig0/0 → SW1 → PC1
+R1(config)# interface gig0/0
+R1(config-if)# ip address 15.255.255.254 255.0.0.0
+R1(config-if)# description Connected to PC1 via SW1
+R1(config-if)# no shutdown
+
+
+Gig0/1 → SW2 → PC2
+R1(config)# interface gig0/1
+R1(config-if)# ip address 182.98.255.254 255.255.0.0
+R1(config-if)# description Connected to PC2 via SW2
+R1(config-if)# no shutdown
+
+
+Gig0/2 → SW3 → PC3
+R1(config)# interface gig0/2
+R1(config-if)# ip address 201.191.20.254 255.255.255.0
+R1(config-if)# description Connected to PC3 via SW3
+R1(config-if)# no shutdown
+
+
+Verify Interfaces
+R1# show ip interface brief
+Confirmed assigned IPs and that interfaces were up/up.
+
+Save Configuration
+R1# show running-config
+R1# copy running-config startup-config
+
+
+Assign IP Addresses to PCs
+PC1: 15.0.0.1 /8 → Gateway: 15.255.255.254
+PC2: 182.98.0.1 /16 → Gateway: 182.98.255.254
+PC3: 201.191.20.1 /24 → Gateway: 201.191.20.254
+
+Ping Tests
+PC1 → PC2: Success 
+PC1 → PC3: Success 
+PC2 → PC3: Success 
+
+# Result
+Router interfaces correctly configured with IPs and descriptions.
+PCs successfully assigned IPs within their respective networks.
+Connectivity tested with ping, and all PCs could reach each other via the router.
