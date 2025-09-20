@@ -1,0 +1,58 @@
+# Day 9 – Interface Configuration
+
+# Objective
+Configure hostnames, IP addresses, interface settings, and optimize the network by disabling unused interfaces.
+
+# Topology
+Router: 1 (R1)
+Switches: 2 (SW1, SW2)
+PCs: 4 (PC1, PC2, PC3, PC4)
+
+# Steps
+
+*configure Hostnames
+Router> enable
+Router# configure terminal
+Router(config)# hostname R1
+SW1(config)# hostname SW1
+SW2(config)# hostname SW2
+
+*Assign IP Addresses
+R1 → 172.16.255.254 /16
+PC1 → 172.16.0.1 /16, Gateway: 172.16.255.254
+PC2 → 172.16.0.2 /16, Gateway: 172.16.255.254
+PC3 → 172.16.0.3 /16, Gateway: 172.16.255.254
+PC4 → 172.16.0.4 /16, Gateway: 172.16.255.254
+
+Manually Configure Speed and Duplex (on device-to-device links)
+Example for router-to-switch:
+
+R1(config)# interface g0/0
+R1(config-if)# speed 100
+R1(config-if)# duplex full
+
+(Applied similarly on SW1 ↔ SW2 uplink interfaces).
+
+*Configure Interface Descriptions
+SW1(config)# interface g0/1
+SW1(config-if)# description Connected to R1
+(Descriptions added for all router, switch, and PC-facing ports).
+
+*Disable Unused Interfaces
+SW1(config)# interface range g0/3 - g0/24
+SW1(config-if-range)# shutdown
+(Same on SW2 for unused ports).
+
+# Verify
+
+Checked IPs with show ip interface brief.
+Confirmed speed/duplex with show interfaces.
+Verified connectivity with ping across PCs.
+
+# Result
+
+Hostnames set for R1, SW1, and SW2.
+Router and PCs configured with correct IPs in the 172.16.0.0/16 network.
+Device-to-device links manually set to correct speed and duplex.
+Unused switch interfaces shut down for security.
+Successful connectivity between all PCs via the router and switches.
