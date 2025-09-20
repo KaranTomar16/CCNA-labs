@@ -28,6 +28,7 @@ It includes Packet Tracer configurations, and step-by-step notes.
 - **Day 6: Ethernet Lan Switching Part-II
 - **Day 7: Ipv4 Addressing Part-I
 - **Day 8: Ipv4 Addressing Part-II
+- **Day 9: Interfaces Configuration
 - **(updated daily)** 
 
 ## 📧 Contact
