@@ -20,15 +20,16 @@ It includes Packet Tracer configurations, and step-by-step notes.
 
 
 ## 📅 Progress Log
-- **Day 1: Introduction to packet Tracer
-- **Day 2: Connecting Devices
-- **Day 3: OSI Model 
-- **Day 4: Basic Device Security
-- **Day 5: Ethernet Lan Switching Part-I
-- **Day 6: Ethernet Lan Switching Part-II
-- **Day 7: Ipv4 Addressing Part-I
-- **Day 8: Ipv4 Addressing Part-II
-- **Day 9: Interfaces Configuration
+- **Day 1:  Introduction to packet Tracer
+- **Day 2:  Connecting Devices
+- **Day 3:  OSI Model 
+- **Day 4:  Basic Device Security
+- **Day 5:  Ethernet Lan Switching Part-I
+- **Day 6:  Ethernet Lan Switching Part-II
+- **Day 7:  Ipv4 Addressing Part-I
+- **Day 8:  Ipv4 Addressing Part-II
+- **Day 9:  Interfaces Configuration
+- **Day 10: Ipv4 Header
 - **(updated daily)** 
 
 ## 📧 Contact
