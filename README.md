@@ -30,6 +30,7 @@ It includes Packet Tracer configurations, and step-by-step notes.
 - **Day 8:  Ipv4 Addressing Part-II
 - **Day 9:  Interfaces Configuration
 - **Day 10: Ipv4 Header
+- **Day 11: Static routing
 - **(updated daily)** 
 
 ## 📧 Contact
