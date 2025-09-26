@@ -1,0 +1,41 @@
+# Day 11 – Static Routing Troubleshooting Lab
+
+# Objective
+Identify and fix misconfigurations on routers to enable successful communication between PC1 and PC2 across multiple routers.
+
+# Topology
+PCs: 2
+Routers: 3
+Switches: 2
+IP Assignments (after correction):
+PC1: 192.168.1.1/24, Gateway 192.168.1.254
+R1 (G0/1): 192.168.1.254/24
+R1 (G0/0): 192.168.12.1/24
+R2 (G0/0): 192.168.12.2/24
+R2 (G0/1): 192.168.13.2/24
+R3 (G0/0): 192.168.13.3/24
+R3 (G0/1): 192.168.3.254/24
+PC2: 192.168.3.1/24, Gateway 192.168.3.254
+
+# Steps
+
+Configured hostnames, IP addresses, and gateways on PCs and routers.
+Initial ping between PC1 and PC2 failed.
+Troubleshot configuration and found issues:
+R1: Static route misconfigured. Corrected route:
+ip route 192.168.3.0 255.255.255.0 192.168.12.2
+
+R2: Wrong IP address on interface. Corrected to:
+G0/0 → 192.168.12.2/24
+G0/1 → 192.168.13.2/24
+
+R3: Wrong IP address on interface. Corrected to:
+G0/0 → 192.168.13.3/24
+G0/1 → 192.168.3.254/24
+
+Verified routing tables with show ip route.
+Retested connectivity with ping between PC1 and PC2.
+
+# Result
+
+After correcting the static route on R1 and IP addressing errors on R2 and R3, PC1 successfully pinged PC2. The lab was completed successfull
