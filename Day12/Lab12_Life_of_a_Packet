@@ -1,0 +1,39 @@
+# Day 13 – Life of a Packet
+
+# Objective
+Trace the life of a packet across multiple LANs and routers by identifying source and destination MAC addresses at each segment of the path using Packet Tracer’s simulation mode.
+
+# Topology
+PCs: 4 (PC1, PC3, PC4 in different LANs)
+Routers: 3 (R1, R2, R3)
+Switches: 2 (SW1, SW2)
+
+# Steps
+1. PC1 → PC4 Ping
+A. PC1 → SW1: Src MAC = PC1 NIC, Dst MAC = SW1 interface (towards R1).
+B. SW1 → R1: Src MAC = PC1 NIC, Dst MAC = R1 G0/0.
+C. R1 → R2: Src MAC = R1 G0/0, Dst MAC = R2 G0/0.
+D. R2 → R3: Src MAC = R2 G0/1, Dst MAC = R3 G0/0.
+E. R3 → SW2: Src MAC = R3 G0/1, Dst MAC = SW2 interface.
+F. SW2 → PC4: Src MAC = R3 G0/1, Dst MAC = PC4 NIC.
+
+2. PC1 → PC3 Ping
+A. PC1 → SW1: Src MAC = PC1 NIC, Dst MAC = SW1 interface (towards PC3).
+B. SW1 → PC3: Src MAC = PC1 NIC, Dst MAC = PC3 NIC.
+
+3. PC4 → PC1 Ping
+(Reverse path of Step 1)
+A. PC4 → SW2: Src MAC = PC4 NIC, Dst MAC = SW2 interface.
+B. SW2 → R3: Src MAC = PC4 NIC, Dst MAC = R3 G0/1.
+C. R3 → R2: Src MAC = R3 G0/0, Dst MAC = R2 G0/1.
+D. R2 → R1: Src MAC = R2 G0/0, Dst MAC = R1 G0/0.
+E. R1 → SW1: Src MAC = R1 G0/1, Dst MAC = SW1 interface.
+F. SW1 → PC1: Src MAC = R1 G0/1, Dst MAC = PC1 NIC.
+
+Verification
+Used CLI show mac-address-table and ARP inspection.
+Ran Packet Tracer’s Simulation Mode after completing initial ARP resolution to confirm MAC src/dst addresses at each segment.
+
+# Result
+
+Successfully identified source and destination MAC addresses at each hop of the packet’s journey between PCs across multiple LANs and routers. Verified correctness with simulation mode and CLI outputs.
