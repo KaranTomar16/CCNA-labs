@@ -1,4 +1,4 @@
-# Day 13 – Life of a Packet
+# Day 12 – Life of a Packet
 
 # Objective
 Trace the life of a packet across multiple LANs and routers by identifying source and destination MAC addresses at each segment of the path using Packet Tracer’s simulation mode.
