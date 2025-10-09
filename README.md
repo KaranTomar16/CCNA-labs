@@ -31,7 +31,8 @@ It includes Packet Tracer configurations, and step-by-step notes.
 - **Day 9:  Interfaces Configuration
 - **Day 10: Ipv4 Header
 - **Day 11: Static routing
-- **Day 12: Life of a Packet  
+- **Day 12: Life of a Packet
+- **Day 13: Subnetting  
 - **(updated daily)** 
 
 ## 📧 Contact
