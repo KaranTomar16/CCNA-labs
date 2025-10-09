@@ -1,0 +1,47 @@
+# Day 13 – Subnetting 
+
+# Objective
+Subnet the 192.168.5.0/24 network using VLSM to allocate appropriate address space for each LAN, configure devices with IP addresses, and establish static routing between routers so that all PCs can communicate with each other.
+
+# Topology
+PCs: 4
+Switches: 4
+Routers: 2
+LANs: 4
+
+# Subnet Allocation
+
+LAN 1 (PC1 – SW1 – R1): 45 hosts → Subnet 192.168.5.0/26
+PC1: 192.168.5.1
+R1: 192.168.5.62
+
+LAN 2 (PC2 – SW2 – R1): 64 hosts → Subnet 192.168.5.64/25
+PC2: 192.168.5.65
+R1: 192.168.5.126
+
+LAN 3 (PC3 – SW3 – R2): 14 hosts → Subnet 192.168.5.128/28
+PC3: 192.168.5.129
+R2: 192.168.5.142
+
+LAN 4 (PC4 – SW4 – R2): 9 hosts → Subnet 192.168.5.144/28
+PC4: 192.168.5.145
+R2: 192.168.5.158
+
+R1–R2 Link (Point-to-Point): 2 hosts → Subnet 192.168.5.160/30
+R1: 192.168.5.161
+R2: 192.168.5.162
+
+# Steps
+Subnetted the 192.168.5.0/24 network using VLSM to meet host requirements.
+Assigned the first usable IP in each subnet to the PC and the last usable IP to the router interface.
+Configured IP addresses on all PCs, switches, and routers according to the plan.
+
+Configured static routes:
+On R1: Routes to LAN 3 and LAN 4 via 192.168.5.162
+On R2: Routes to LAN 1 and LAN 2 via 192.168.5.161
+Verified routes using the show ip route command.
+Tested connectivity by pinging between all PCs across different LANs.
+
+# Result
+
+All four PCs in different LANs successfully pinged each other through routers R1 and R2. The subnetting using VLSM ensured efficient IP usage and complete connectivity across the network.
