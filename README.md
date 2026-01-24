@@ -33,7 +33,7 @@ It includes Packet Tracer configurations, and step-by-step notes.
 - **Day 11: Static routing
 - **Day 12: Life of a Packet
 - **Day 13: Subnetting  
-- **(updated daily)*
+- **(updated daily)**
 
 ## 📧 Contact
 If you’re interested in collaboration or have suggestions, feel free to connect!  
