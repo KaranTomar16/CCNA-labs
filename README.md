@@ -1,4 +1,4 @@
-# CCNA Labs Repository for 
+# CCNA Labs Repository for beginners 
 
 Welcome 👋!  
 This repository documents my **daily practice labs** for the Cisco Certified Network Associate (CCNA) certification.  
